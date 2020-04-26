@@ -64,7 +64,8 @@ class CalendarList extends Component {
     scrollEnabled: true,
     scrollsToTop: false,
     removeClippedSubviews: Platform.OS === 'android' ? false : true,
-    keyExtractor: (item, index) => String(index)
+    keyExtractor: (item, index) => String(index),
+    initialNumToRender: 12,
   }
 
   constructor(props) {
@@ -322,6 +323,7 @@ class CalendarList extends Component {
           onEndReachedThreshold={this.props.onEndReachedThreshold}
           onEndReached={this.props.onEndReached}
           keyboardShouldPersistTaps={this.props.keyboardShouldPersistTaps}
+          initialNumToRender={this.props.initialNumToRender}
         />
         {this.renderStaticHeader()}
       </View>
